@@ -30,7 +30,7 @@ export const columns: ColumnDef<Performance>[] = [
   },
   {
     accessorKey: "speaking",
-    header: "Speaking",
+    header: "Damage",
   },
   {
     accessorKey: "interaction",

@@ -37,12 +37,12 @@ const data = {
   navMain: [
     {
       title: "Home",
-      url: "/",
+      url: "/home",
       icon: House,
       items: [
         {
           title: "Tirar submenu",
-          url: "/",
+          url: "/home",
         },
       ],
     },
@@ -58,22 +58,22 @@ const data = {
         },
         {
           title: "Parâmetros",
-          url: "/dashboard",
+          url: "/performance/parameters",
         },
       ],
     },
     {
-      title: "Rooster",
+      title: "Players",
       url: "#",
       icon: Users,
       items: [
         {
           title: "Overview",
-          url: "#",
+          url: "#/players/overview",
         },
         {
-          title: "Players",
-          url: "#",
+          title: "Players Edit",
+          url: "/players/playersedit",
         },
       ],
     },
@@ -83,12 +83,8 @@ const data = {
       icon: Sword,
       items: [
         {
-          title: "Overview",
-          url: "#",
-        },
-        {
           title: "Trinkets",
-          url: "#",
+          url: "/itens/trinkets",
         },
       ],
     },
