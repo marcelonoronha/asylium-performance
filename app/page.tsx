@@ -1,3 +1,4 @@
+import { SectionCards } from "@/components/section-cards";
 export default function Home() {
-  return <div>Hello world!</div>;
+  return <SectionCards />;
 }

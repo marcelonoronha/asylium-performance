@@ -37,12 +37,12 @@ const data = {
   navMain: [
     {
       title: "Home",
-      url: "#",
+      url: "/",
       icon: House,
       items: [
         {
           title: "Tirar submenu",
-          url: "#",
+          url: "/",
         },
       ],
     },
@@ -54,7 +54,7 @@ const data = {
       items: [
         {
           title: "Overview",
-          url: "/dashboard",
+          url: "/performance/overview",
         },
         {
           title: "Parâmetros",
