@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
-import { ModeToggle } from "@/components/mode-toggle";
 function getTitleFromPath(pathname: string): string {
   const segments = pathname.split("/").filter(Boolean);
 
@@ -29,7 +28,7 @@ export function SiteHeader() {
         />
         <h1 className="text-base font-medium">{title}</h1>
         <div className="ml-auto flex items-center gap-2">
-          <ModeToggle />
+          {/* Theme toggle removed - using dark mode by default */}
         </div>
       </div>
     </header>

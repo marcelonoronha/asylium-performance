@@ -1,4 +1,5 @@
-import { SectionCards } from "@/components/section-cards";
+import { redirect } from "next/navigation";
+
 export default function Home() {
-  return <SectionCards />;
+  redirect("/home");
 }
