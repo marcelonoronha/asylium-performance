@@ -43,9 +43,8 @@ const data = {
     },
     {
       title: "Performance",
-      url: "#",
+      url: "/performance/overview",
       icon: ChartNoAxesCombined,
-      isActive: true,
       items: [
         {
           title: "Overview",
@@ -59,12 +58,12 @@ const data = {
     },
     {
       title: "Players",
-      url: "#",
+      url: "/players/playersedit",
       icon: Users,
       items: [
         {
           title: "Overview",
-          url: "#/players/overview",
+          url: "/players/overview",
         },
         {
           title: "Players Edit",
@@ -74,7 +73,7 @@ const data = {
     },
     {
       title: "Itens",
-      url: "#",
+      url: "/itens/trinkets",
       icon: Sword,
       items: [
         {

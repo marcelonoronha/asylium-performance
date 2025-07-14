@@ -19,7 +19,8 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { logout } from "@/actions/logout";
-import { useUser } from "@/hooks/use-user";
+import { useUser } from "@/contexts/user-context";
+import { RegisterModal } from "@/components/register-modal";
 
 export function NavUser() {
   const { isMobile } = useSidebar();
@@ -80,6 +81,9 @@ export function NavUser() {
     );
   }
 
+  // Check if user is admin (can see register button)
+  const isAdmin = user.email === "mbonoronha@gmail.com";
+
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -124,6 +128,17 @@ export function NavUser() {
             </DropdownMenuLabel>
 
             <DropdownMenuSeparator />
+
+            {/* Admin-only register button */}
+            {isAdmin && (
+              <>
+                <DropdownMenuItem asChild>
+                  <RegisterModal />
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+              </>
+            )}
+
             <DropdownMenuItem onClick={handleLogout}>
               <LogOut className="mr-2 h-4 w-4" />
               Log out

@@ -2,7 +2,6 @@
 
 import { createClient } from '@/utils/supabase/server'
 import { z } from 'zod'
-import { getAuthRedirectUrl } from '@/lib/env'
 
 // Validation schema for register form
 const registerSchema = z.object({
@@ -77,32 +76,6 @@ export async function registerWithEmail(formData: FormData) {
     }
   } catch (err) {
     console.error('Registration error:', err)
-    return {
-      error: 'An unexpected error occurred. Please try again.',
-    }
-  }
-}
-
-export async function registerWithOAuth(provider: 'discord') {
-  const supabase = await createClient()
-  
-  try {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider,
-      options: {
-        redirectTo: getAuthRedirectUrl(),
-      },
-    })
-
-    if (error) {
-      return {
-        error: error.message,
-      }
-    }
-
-    return { success: true, data }
-  } catch (err) {
-    console.error('OAuth registration error:', err)
     return {
       error: 'An unexpected error occurred. Please try again.',
     }

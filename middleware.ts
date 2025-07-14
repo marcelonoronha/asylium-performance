@@ -3,6 +3,11 @@ import { updateSession } from '@/utils/supabase/middleware'
 
 export async function middleware(request: NextRequest) {
   try {
+    // Block access to /register route
+    if (request.nextUrl.pathname === '/register') {
+      return NextResponse.redirect(new URL('/home', request.url))
+    }
+
     const response = await updateSession(request)
     return response
   } catch (error) {

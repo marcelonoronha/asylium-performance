@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { registerWithEmail, registerWithOAuth } from "@/actions/register";
+import { registerWithEmail } from "@/actions/register";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -39,25 +39,6 @@ export function RegisterForm({
       }
     } catch (error) {
       console.error("Email register error:", error);
-      setError("An unexpected error occurred. Please try again.");
-    } finally {
-      setIsLoading(false);
-    }
-  }
-
-  async function handleOAuthRegister() {
-    setIsLoading(true);
-    setError(null);
-
-    try {
-      const result = await registerWithOAuth("discord");
-
-      if (result?.error) {
-        setError(result.error);
-      }
-      // OAuth redirects automatically, so no need for manual redirect
-    } catch (error) {
-      console.error("OAuth register error:", error);
       setError("An unexpected error occurred. Please try again.");
     } finally {
       setIsLoading(false);
