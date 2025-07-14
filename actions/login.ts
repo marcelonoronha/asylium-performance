@@ -2,6 +2,7 @@
 
 import { createClient } from '@/utils/supabase/server'
 import { z } from 'zod'
+import { getAuthRedirectUrl, getResetPasswordUrl } from '@/lib/env'
 
 // Validation schema for login form
 const loginSchema = z.object({
@@ -63,7 +64,7 @@ export async function loginWithOAuth(provider: 'discord') {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider,
       options: {
-        redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
+        redirectTo: getAuthRedirectUrl(),
       },
     })
 
@@ -104,7 +105,7 @@ export async function resetPassword(email: string) {
   
   try {
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/reset-password`,
+      redirectTo: getResetPasswordUrl(),
     })
 
     if (error) {
