@@ -5,7 +5,7 @@
 export function getSiteUrl(): string {
   // In production, use the environment variable
   if (process.env.NODE_ENV === 'production') {
-    return process.env.NEXT_PUBLIC_SITE_URL || 'https://your-domain.com'
+    return process.env.NEXT_PUBLIC_SITE_URL || 'https://asylium-performance.vercel.app/'
   }
   
   // In development, use localhost
